@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قوانين بطولة GGE</title>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .rules {
+            font-size: 1.3em;
+            line-height: 2;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .rules:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .return-btn, .mode-btn {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1.2em;
+        }
+
+        .return-btn:hover, .mode-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+        }
+
+        .mode-btn img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode .rules {
+            background-color: #1e1e1e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="https://example.com/league" class="return-btn">العودة لموقع دوري البطولة</a>
+            <button class="mode-btn" onclick="toggleMode()">
+                <img src="day-icon.png" alt="وضع نهاري" id="mode-icon"> وضع نهاري
+            </button>
+        </div>
+
+        <h1>قوانين بطولة GGE</h1>
+
+        <div class="rules">
+            <p>أدوات مزدوجة أول صفين فقط.</p>
+            <p>100 ألف دفاع ساحة فقط.</p>
+            <p>ممنوع طلب مساعدة من أي شخص في الهجمات أو الصد.</p>
+            <p>أقصى عدد موجات مسموح باستخدامه: هيئة أربع موجات مع الموجة الزائدة في القائد.</p>
+            <p>لا يوجد هيئة صد.</p>
+            <p>لا يمكن لأحد مشاهدة تفاصيل التقارير إلا بعد نهاية البطولة.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const modeBtn = document.querySelector('.mode-btn');
+            const modeIcon = document.getElementById('mode-icon');
+
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                modeBtn.innerHTML = '<img src="moon.png" alt="وضع ليلي" id="mode-icon"> وضع ليلي';
+            } else {
+                modeBtn.innerHTML = '<img src="sun.png" alt="وضع نهاري" id="mode-icon"> وضع نهاري';
+            }
+        }
+    </script>
+</body>
+</html>
